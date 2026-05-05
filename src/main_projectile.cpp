@@ -13,7 +13,9 @@
 // Mode
 // ───────────────────────────────
 enum class Mode { PROJECTILE, BASIC };
-Mode mode = Mode::PROJECTILE;
+// define scope
+
+Mode mode = Mode::PROJECTILE; // Default mode is Projectile
 
 int main()
 {

@@ -61,7 +61,7 @@ class vec3dMath
     // Now we are doing update
     static void addToSelf(vec3d& a, const vec3d& b)
     { 
-        a.x+=b.x;
+        a.x+=b.x; // a.x = a.x + b.x
         a.y+=b.y;
         a.z+=b.z;
     }
@@ -95,23 +95,25 @@ class vec3dMath
 
     static vec3d nagate(vec3d& v)
     {
-        return scale(v, -1.0f);
+        return scale(v, -1.0f); // this will generate a new vector that will be negative of previous on.
     }
 
     static void negateToSelf(vec3d& v)
     {
-        v.x = -v.x;
+        v.x = -v.x; // could've used selfscale
         v.y = -v.y;
         v.z = -v.z;
     }
 
-    // distance formula for length
+    // distance formula for length // used a lot
+    // d = sqrt(x^2 + y^2 + z^2)
     static float length(const vec3d& v) 
     { 
         return sqrtf(v.x*v.x + v.y*v.y + v.z*v.z); 
     }
 
-    // Unit Vector
+    // Unit Vector // used alot.
+    // Vn = V/|V|
     static vec3d normalized(const vec3d& v) 
     {
         float len = length(v);

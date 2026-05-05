@@ -87,7 +87,7 @@ int main()
         float dy = target.y - launch.y;
 
         float t = deg2rad(angleDeg);
-
+// powf(x, y)= x^y
         float denom = 2.0f * (dx * tanf(t) - dy) * powf(cosf(t), 2);
 
         if (denom <= 0.0f)

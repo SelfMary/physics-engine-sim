@@ -1,3 +1,5 @@
+// g++ src/main_basic.cpp src/Render.cpp  src/glad.c -Iinclude -lglfw -lGL -ldl -lpthread -o basic_sim
+
 #include "Render.h"
 #include "PhysicsWorld.h"
 #include "Collision.h"
