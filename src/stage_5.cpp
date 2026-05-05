@@ -158,37 +158,6 @@ int main()
             }
         }
 
-        // ---------------- MODE 3: grid search ----------------
-        if (mode == 3)
-        {
-            float bestV = 0;
-            float bestErr = 1e9;
-
-            for (float v = 5; v <= 60; v += 0.5f)
-            {
-                for (float a = 5; a <= 85; a += 1.0f)
-                {
-                    float r = deg2rad(a);
-
-                    float vx = v * cosf(r);
-                    float vy = v * sinf(r);
-
-                    float t = (target.x - launch.x) / vx;
-                    float y = launch.y + vy * t - 0.5f * g * t * t;
-
-                    float err = fabsf(y - target.y);
-
-                    if (err < bestErr)
-                    {
-                        bestErr = err;
-                        bestV = v;
-                        fixedAngle = a;
-                    }
-                }
-            }
-
-            requiredSpeed = bestV;
-        }
 
         // ---------------- physics ----------------
         if (fired)
